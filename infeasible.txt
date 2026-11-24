@@ -1,0 +1,142 @@
+
+
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+Root barrier log...
+Ordering time: 0.14s
+Barrier statistics:
+ AA' NZ     : 2.464e+06
+ Factor NZ  : 1.404e+07 (roughly 200 MB of memory)
+ Factor Ops : 2.381e+09 (less than 1 second per iteration)
+ Threads    : 21
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   0.00000000e+00 -4.38600716e+06  2.74e+07 0.00e+00  1.57e+03     2s
+   1   0.00000000e+00 -3.09313438e+06  8.00e+06 2.64e-02  4.59e+02     2s
+   2   0.00000000e+00 -1.26877370e+06  1.47e+06 3.50e-03  8.61e+01     2s
+   3   0.00000000e+00 -2.90712729e+05  2.86e+05 1.39e-15  1.66e+01     2s
+   4   0.00000000e+00 -1.61976545e+05  1.50e+05 2.21e-15  8.55e+00     2s
+   5   0.00000000e+00 -1.15094239e+05  5.13e+04 1.33e-14  3.07e+00     2s
+   6   0.00000000e+00 -8.03846146e+04  1.06e+04 8.08e-15  8.07e-01     2s
+   7   0.00000000e+00 -2.99858558e+04  4.18e+03 7.66e-15  2.64e-01     3s
+   8   0.00000000e+00 -1.32112407e+04  1.93e+03 8.02e-15  1.04e-01     3s
+   9   0.00000000e+00 -1.17683634e+04  1.58e+03 9.71e-15  8.78e-02     3s
+  10   0.00000000e+00 -1.12757212e+04  1.27e+03 1.30e-14  7.70e-02     3s
+  11   0.00000000e+00 -9.78627081e+03  9.24e+02 1.50e-14  6.14e-02     3s
+  12   0.00000000e+00 -7.80164249e+03  6.20e+02 1.39e-14  4.50e-02     3s
+  13   0.00000000e+00 -5.66544643e+03  4.03e+02 1.03e-14  3.07e-02     3s
+  14   0.00000000e+00 -4.14314620e+03  3.21e+02 7.85e-15  2.24e-02     3s
+  15   0.00000000e+00 -3.16321128e+03  1.96e+02 8.31e-15  1.58e-02     3s
+  16   0.00000000e+00 -2.35537946e+03  1.17e+02 5.82e-15  1.10e-02     3s
+  17   0.00000000e+00 -1.81356260e+03  9.36e+01 5.38e-15  8.36e-03     3s
+  18   0.00000000e+00 -1.43075786e+03  7.13e+01 4.18e-15  6.44e-03     3s
+  19   0.00000000e+00 -1.19013766e+03  5.20e+01 4.96e-15  5.20e-03     3s
+  20   0.00000000e+00 -8.63567742e+02  3.27e+01 3.62e-15  3.65e-03     3s
+  21   0.00000000e+00 -5.05872405e+02  2.04e+01 8.41e-10  2.09e-03     3s
+  22   0.00000000e+00 -2.94438231e+02  8.39e+00 2.61e-09  1.18e-03     3s
+  23   0.00000000e+00 -9.88924747e+01  3.61e+00 3.76e-09  3.89e-04     3s
+  24   0.00000000e+00 -2.14550140e+01  2.42e-02 6.65e-09  8.31e-05     3s
+  25   0.00000000e+00 -3.46170593e-04  2.71e-07 1.92e-13  1.34e-09     3s
+  26   0.00000000e+00 -3.77337167e-10  3.07e-09 4.75e-17  1.46e-15     3s
+Barrier solved model in 26 iterations and 3.49 seconds (7.52 work units)
+Optimal objective 0.00000000e+00
+Root crossover log...
+       0 PPushes remaining with PInf 0.0000000e+00                 5s
+  Push phase complete: Pinf 0.0000000e+00, Dinf 0.0000000e+00      5s
+Root simplex log...
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36167    0.0000000e+00   0.000000e+00   0.000000e+00      5s
+Crossover time: 1.81 seconds (2.73 work units)
+   36167    0.0000000e+00   0.000000e+00   0.000000e+00      5s
+Concurrent spin time: 0.17s
+Solved with barrier
+Root relaxation: objective 0.000000e+00, 36167 iterations, 3.93 seconds (6.02 work units)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+     0     0    0.00000    0 26700          -    0.00000      -     -   47s
+     0     0 infeasible    0               - infeasible      -     -   68s
+Explored 1 nodes (146115 simplex iterations) in 68.44 seconds (111.23 work units)
+Thread count was 23 (of 24 available processors)
+Solution count 0
+Model is infeasible
+Best objective -, best bound -, gap -
+============================================================
+test2.1 status: 3
+no feasible solution
+============================================================
+Traceback (most recent call last):
+  File "<input>", line 2491, in <module>
+  File "src/gurobipy/linexpr.pxi", line 407, in gurobipy._core.LinExpr.getValue
+  File "src/gurobipy/var.pxi", line 128, in gurobipy._core.Var.__getattr__
+  File "src/gurobipy/var.pxi", line 156, in gurobipy._core.Var.getAttr
+  File "src/gurobipy/_attrutil.pyx", line 119, in gurobipy._attrutil._getattr
+AttributeError: Unable to retrieve attribute 'x'
+Deterministic concurrent LP optimizer: primal simplex, dual simplex, and barrier
+Showing barrier log only...
+Root barrier log...
+Ordering time: 0.15s
+Barrier statistics:
+ AA' NZ     : 2.464e+06
+ Factor NZ  : 1.404e+07 (roughly 200 MB of memory)
+ Factor Ops : 2.381e+09 (less than 1 second per iteration)
+ Threads    : 21
+                  Objective                Residual
+Iter       Primal          Dual         Primal    Dual     Compl     Time
+   0   0.00000000e+00 -4.38600716e+06  2.74e+07 0.00e+00  1.57e+03     2s
+   1   0.00000000e+00 -3.09313120e+06  8.00e+06 2.64e-02  4.59e+02     2s
+   2   0.00000000e+00 -1.26878698e+06  1.47e+06 3.50e-03  8.61e+01     2s
+   3   0.00000000e+00 -2.90798424e+05  2.82e+05 1.40e-15  1.64e+01     2s
+   4   0.00000000e+00 -1.61928463e+05  1.49e+05 3.39e-15  8.50e+00     2s
+   5   0.00000000e+00 -1.15225205e+05  4.96e+04 1.37e-14  2.98e+00     2s
+   6   0.00000000e+00 -8.24364725e+04  1.06e+04 9.16e-15  8.15e-01     3s
+   7   0.00000000e+00 -2.96571697e+04  4.67e+03 1.09e-14  2.78e-01     3s
+   8   0.00000000e+00 -1.20009797e+04  2.00e+03 8.24e-15  9.93e-02     3s
+   9   0.00000000e+00 -1.08545997e+04  1.42e+03 1.21e-14  7.82e-02     3s
+  10   0.00000000e+00 -9.37167370e+03  1.05e+03 9.36e-15  6.17e-02     3s
+  11   0.00000000e+00 -7.56848326e+03  6.04e+02 9.35e-15  4.28e-02     3s
+  12   0.00000000e+00 -5.45275784e+03  3.37e+02 8.04e-15  2.77e-02     3s
+  13   0.00000000e+00 -4.26933527e+03  2.30e+02 6.72e-15  2.06e-02     3s
+  14   0.00000000e+00 -2.09324308e+03  1.12e+02 5.04e-15  9.53e-03     3s
+  15   0.00000000e+00 -1.63405285e+03  8.66e+01 4.52e-15  7.28e-03     3s
+  16   0.00000000e+00 -1.37405311e+03  5.90e+01 3.01e-15  5.90e-03     3s
+  17   0.00000000e+00 -9.70510964e+02  3.77e+01 2.48e-15  4.05e-03     3s
+  18   0.00000000e+00 -5.46871278e+02  1.35e+01 6.16e-11  2.19e-03     3s
+  19   0.00000000e+00 -9.41465955e+01  1.00e-01 3.06e-09  3.65e-04     3s
+  20   0.00000000e+00 -2.36140364e-02  2.07e-04 3.58e-12  9.14e-08     3s
+  21   0.00000000e+00 -2.99950719e-05  2.71e-07 3.17e-15  1.16e-10     3s
+  22   0.00000000e+00 -6.90928370e-11  1.23e-09 6.09e-17  2.81e-16     3s
+Barrier solved model in 22 iterations and 3.27 seconds (7.07 work units)
+Optimal objective 0.00000000e+00
+Root crossover log...
+       0 PPushes remaining with PInf 0.0000000e+00                 5s
+  Push phase complete: Pinf 0.0000000e+00, Dinf 0.0000000e+00      5s
+Root simplex log...
+Iteration    Objective       Primal Inf.    Dual Inf.      Time
+   36129    0.0000000e+00   0.000000e+00   0.000000e+00      5s
+Crossover time: 1.90 seconds (2.96 work units)
+   36129    0.0000000e+00   0.000000e+00   0.000000e+00      5s
+Concurrent spin time: 0.17s
+Solved with barrier
+Root relaxation: objective 0.000000e+00, 36129 iterations, 3.78 seconds (5.78 work units)
+Total elapsed time = 10.35s (DegenMoves)
+    Nodes    |    Current Node    |     Objective Bounds      |     Work
+ Expl Unexpl |  Obj  Depth IntInf | Incumbent    BestBd   Gap | It/Node Time
+     0     0    0.00000    0 27980          -    0.00000      -     -   43s
+     0     0 infeasible    0               - infeasible      -     -   70s
+Explored 1 nodes (153406 simplex iterations) in 70.61 seconds (118.34 work units)
+Thread count was 23 (of 24 available processors)
+Solution count 0
+Model is infeasible
+Best objective -, best bound -, gap -
+============================================================
+test2.1 status: 3
+no feasible solution
+============================================================
+Traceback (most recent call last):
+  File "<input>", line 2491, in <module>
+  File "src/gurobipy/linexpr.pxi", line 407, in gurobipy._core.LinExpr.getValue
+  File "src/gurobipy/var.pxi", line 128, in gurobipy._core.Var.__getattr__
+  File "src/gurobipy/var.pxi", line 156, in gurobipy._core.Var.getAttr
+  File "src/gurobipy/_attrutil.pyx", line 119, in gurobipy._attrutil._getattr
+AttributeError: Unable to retrieve attribute 'x'
+
